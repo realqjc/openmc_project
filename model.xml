@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<model>
+  <materials>
+    <material id="55" name="UO2 fuel" depletable="true">
+      <density value="10.29769" units="g/cm3"/>
+      <nuclide name="U234" ao="0.00018100268000368502"/>
+      <nuclide name="U235" ao="0.020250596249672008"/>
+      <nuclide name="U238" ao="0.9794756436128154"/>
+      <nuclide name="U236" ao="9.275745750894256e-05"/>
+      <nuclide name="O16" ao="1.9952412"/>
+      <nuclide name="O17" ao="0.000758"/>
+      <nuclide name="O18" ao="0.0040008"/>
+    </material>
+    <material id="56" name="Zircaloy">
+      <density value="6.55" units="g/cm3"/>
+      <nuclide name="Zr90" ao="0.5145"/>
+      <nuclide name="Zr91" ao="0.1122"/>
+      <nuclide name="Zr92" ao="0.1715"/>
+      <nuclide name="Zr94" ao="0.1738"/>
+      <nuclide name="Zr96" ao="0.028"/>
+    </material>
+    <material id="57" name="Water">
+      <density value="0.740582" units="g/cm3"/>
+      <nuclide name="H1" ao="1.99968852"/>
+      <nuclide name="H2" ao="0.00031148"/>
+      <nuclide name="O16" ao="0.9976206"/>
+      <nuclide name="O17" ao="0.000379"/>
+      <nuclide name="O18" ao="0.0020004"/>
+      <sab name="c_H_in_H2O"/>
+    </material>
+  </materials>
+  <geometry>
+    <cell id="55" material="55" region="-109" universe="19"/>
+    <cell id="56" material="56" region="109 -110" universe="19"/>
+    <cell id="57" material="57" region="110 111 -112 113 -114" universe="19"/>
+    <surface id="109" type="z-cylinder" coeffs="0.0 0.0 0.39"/>
+    <surface id="110" type="z-cylinder" coeffs="0.0 0.0 0.4572"/>
+    <surface id="111" type="x-plane" boundary="reflective" coeffs="-0.75"/>
+    <surface id="112" type="x-plane" boundary="reflective" coeffs="0.75"/>
+    <surface id="113" type="y-plane" boundary="reflective" coeffs="-0.75"/>
+    <surface id="114" type="y-plane" boundary="reflective" coeffs="0.75"/>
+  </geometry>
+  <settings>
+    <run_mode>eigenvalue</run_mode>
+    <particles>5000</particles>
+    <batches>100</batches>
+    <inactive>20</inactive>
+    <source type="independent" strength="1.0" particle="neutron">
+      <space type="fission">
+        <parameters>-0.75 -0.75 -1 0.75 0.75 1</parameters>
+      </space>
+    </source>
+  </settings>
+  </model>
