@@ -21,6 +21,7 @@
     "http.proxyStrictSSL": false,
     "github.copilot.advanced.proxy": "http://127.0.0.1:10792",
 
+    "git.useEditorAsCommitInput": false,
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "git.autofetch": false
