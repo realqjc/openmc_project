@@ -1,3 +1,4 @@
+#老脚本
 import openmc  #富集度试验
 
 # 生成PWR单燃料棒模型

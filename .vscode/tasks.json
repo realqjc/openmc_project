@@ -1,0 +1,56 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+
+        {
+            "label": "Run Pitch Scan",
+            "type": "shell",
+            "command": "/opt/homebrew/Caskroom/miniforge/base/envs/openmc-x86/bin/python",
+            "args": [
+                "scripts/test_openmc6.py"
+            ],
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Run Enrichment Scan",
+            "type": "shell",
+            "command": "/opt/homebrew/Caskroom/miniforge/base/envs/openmc-x86/bin/python",
+            "args": [
+                "scripts/test_openmc7.py"
+            ],
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Analyze All Results",
+            "type": "shell",
+            "command": "/opt/homebrew/Caskroom/miniforge/base/envs/openmc-x86/bin/python",
+            "args": [
+                "scripts/run_all_analysis.py"
+            ],
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Clean Old Statepoints",
+            "type": "shell",
+            "command": "/opt/homebrew/Caskroom/miniforge/base/envs/openmc-x86/bin/python",
+            "args": [
+                "scripts/clean_old_statepoints.py"
+            ],
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Run Full Reactor Study",
+            "type": "shell",
+            "command": "/opt/homebrew/Caskroom/miniforge/base/envs/openmc-x86/bin/python",
+            "args": [
+                "scripts/run_full_reactor_study.py"
+            ],
+            "problemMatcher": []
+        }
+
+    ]
+}

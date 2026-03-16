@@ -1,3 +1,4 @@
+#老脚本
 import openmc   #富集度试验
 
 model = openmc.examples.pwr_pin_cell()

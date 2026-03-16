@@ -1,0 +1,66 @@
+# settings计算设置，包含了模拟的基本设置，如批次数、非活跃批次数和粒子数。
+# 想提高精度，只改变粒子数particles就行了，其他的设置保持不变。
+# geometry包含了几何参数，如燃料棒半径和包壳半径。
+# pitch_scan和enrichment_scan分别包含了关于扫描的设置，
+#如是否启用扫描、扫描的类型、扫描的起始值、结束值、步长pitch、富集度enrichment
+#读取配置的小工具是config_loader.py
+#analysis部分包含了分析结果的设置，如是否保存图表和报告，以及图表和报告的标题、标签等信息。
+
+# 如何使用：python scripts/run_all_analysis.py
+
+project:
+  name: "OpenMC reactor simulation"
+
+settings:
+  batches: 100
+  inactive: 20
+  particles: 5000
+
+geometry:
+  fuel_radius: 0.39
+  clad_radius: 0.45720
+
+pitch_scan:
+  enabled: true #可以改成false来关闭这个扫描，run_all_analysis就不会执行
+  start: 0.95
+  stop: 4.50
+  step: 0.30
+  fixed_enrichment: 3.0
+
+enrichment_scan:
+  enabled: true #可以改成false来关闭这个扫描，run_all_analysis就不会执行
+  start: 0.2
+  stop: 2.0
+  step: 0.1
+  fixed_pitch: 1.50
+
+analysis:
+  save_plots: true
+  save_reports: true
+  show_plots: true
+
+  enrichment:
+    scan_dir: "enrichment_scan"
+    analysis_dir: "analysis"
+    csv_pattern: "enrichment_keff_results_*.csv"
+    plot_prefix: "analysis_enrichment"
+    report_prefix: "analysis_enrichment"
+    title: "Analysis of k-effective vs Enrichment"
+    xlabel: "U-235 enrichment (%)"
+    ylabel: "Combined k-effective"
+
+  pitch:
+    scan_dir: "pitch_scan"
+    analysis_dir: "analysis"
+    csv_pattern: "pitch_keff_results_*.csv"
+    plot_prefix: "analysis_pitch"
+    report_prefix: "analysis_pitch"
+    title: "Analysis of k-effective vs Pitch"
+    xlabel: "Pitch (cm)"
+    ylabel: "Combined k-effective"
+
+workflow:
+  auto_analyze_after_run: true      #自动分析,只是扫描时可以关闭
+  auto_clean_statepoints: false     #自动清理状态文件
+  clean_days: 7                     #清理多少天前的statepoints文件 
+  clean_delete_mode: false          #如果clean_delete_mode=true，则直接删除文件；如果false，则移动到一个叫old_statepoints的文件夹里，保留备份。建议先用false测试，确认没问题后再改成true。

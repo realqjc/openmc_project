@@ -1,3 +1,4 @@
+#老脚本
 """
 OpenMC Reactor Physics Study
 
@@ -10,6 +11,9 @@ Experiments included:
 Author: 邱俊诚
 Course: 核反应堆技术
 """
+#conda activate openmc-x86 记得开始之前先运行
+#现在不用了
+#cmd+shift+B 自动计算 输出 保存csv与图片
 
 import openmc  #软件使用示例
 

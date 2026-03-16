@@ -1,3 +1,81 @@
+# ==============================
+# OpenMC simulation outputs
+# ==============================
+
+# OpenMC statepoint files
 *.h5
+
+# particle restart files
+particle_*.h5
+
+# summary files
+summary.h5
+
+# statepoint files
+statepoint.*.h5
+
+# OpenMC generated XML (可选)
+model.xml
+
+
+# ==============================
+# Simulation output directories
+# ==============================
+
+# 不提交大型结果
+statepoints/
+
+# 自动生成的图和csv
+results/
+
+# 但允许保留示例数据
+!results/sample/
+
+
+# ==============================
+# Python cache
+# ==============================
+
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+
+# ==============================
+# macOS system files
+# ==============================
+
+.DS_Store
+
+
+# ==============================
+# VSCode local settings
+# ==============================
+
+.vscode/
+
+
+# ==============================
+# Python virtual environments
+# ==============================
+
+venv/
+.env/
+.conda/
+
+
+# ==============================
+# Jupyter notebooks checkpoints
+# ==============================
+
+.ipynb_checkpoints/
+
+
+# ==============================
+# Temporary files
+# ==============================
+
+*.log
+*.tmp
+*.bak

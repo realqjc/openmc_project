@@ -1,4 +1,19 @@
 {
-    "python-envs.defaultEnvManager": "ms-python.python:conda",
-    "python-envs.defaultPackageManager": "ms-python.python:conda"
+    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniforge/base/envs/openmc-x86/bin/python",
+    "python.terminal.activateEnvironment": false,
+
+    "terminal.integrated.profiles.osx": {
+        "zsh (openmc-x86)": {
+            "path": "zsh",
+            "args": [
+                "-c",
+                "source /opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh && conda activate openmc-x86 && exec zsh"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.osx": "zsh (openmc-x86)",
+
+    "terminal.integrated.automationProfile.osx": {
+        "path": "zsh"
+    }
 }
