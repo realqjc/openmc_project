@@ -29,7 +29,7 @@ statepoints/
 results/
 
 # 但允许保留示例数据
-!results/sample/
+!results/example/
 
 
 # ==============================
