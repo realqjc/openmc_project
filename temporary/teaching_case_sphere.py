@@ -58,16 +58,16 @@ materials = openmc.Materials([fuel, water])
 # 燃料球半径
 # 这是最重要的几何参数之一。
 # 改大：燃料体积增大，通常会明显影响 k-eff。
-sphere = openmc.Sphere(r=9.0)
+sphere = openmc.Sphere(r=12.0)
 
 # 最外层真空边界盒
 # 这里决定“水层有多厚”以及整个计算区域有多大。
 # 盒子越大，在燃料球半径不变时，外部水层越厚，
 # 慢化/反射条件会改变，因此也会影响 k-eff。
 box = openmc.model.RectangularParallelepiped(
-    -50.0, 50.0,   # x_min, x_max
-    -50.0, 50.0,   # y_min, y_max
-    -50.0, 50.0,   # z_min, z_max
+    -500, 500,   # x_min, x_max
+    -500, 500,   # y_min, y_max
+    -500, 500,   # z_min, z_max
     boundary_type="vacuum"   # 真空边界：粒子离开后不再返回
 )
 
@@ -110,7 +110,7 @@ settings.inactive = 10
 # 每批粒子数
 # 这也主要影响统计误差，不直接改变真实 k-eff。
 # 粒子数越大，结果通常越稳定，但计算更慢。
-settings.particles = 9000
+settings.particles = 10000
 
 # 初始源放在原点
 # 对这个简单模型来说，初始源通常不会改变最终收敛后的 k-eff，
