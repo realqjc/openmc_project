@@ -10,8 +10,8 @@
 
 project:
   name: "OpenMC reactor simulation"
-  author:"Qiu Juncheng"
-  date:"2026-03-16"
+  author: "Qiu Juncheng"
+  date: "2026-03-16"
 
 settings:
   batches: 100
@@ -24,16 +24,16 @@ geometry:
 
 pitch_scan:
   enabled: true #可以改成false来关闭这个扫描，run_all_analysis就不会执行
-  start: 0.95
+  start: 1.00
   stop: 2.00
-  step: 0.30
+  step: 0.40
   fixed_enrichment: 3.0
 
 enrichment_scan:
   enabled: true #可以改成false来关闭这个扫描，run_all_analysis就不会执行
-  start: 0.2
+  start: 0.4
   stop: 2.0
-  step: 0.1
+  step: 0.4
   fixed_pitch: 1.50
 
 analysis:     #是否保存.h5文件
@@ -65,4 +65,4 @@ workflow:
   auto_analyze_after_run: true      #自动分析,只是扫描时可以关闭
   auto_clean_statepoints: false     #自动清理状态文件
   clean_days: 7                     #清理多少天前的statepoints文件 
-  clean_delete_mode: false          #如果clean_delete_mode=true，则直接删除文件；如果false，则移动到一个叫old_statepoints的文件夹里，保留备份。建议先用false测试，确认没问题后再改成true。
+  clean_delete_mode: true          #如果clean_delete_mode=true，则直接删除文件；如果false，则移动到一个叫old_statepoints的文件夹里，保留备份。建议先用false测试，确认没问题后再改成true。
