@@ -8,10 +8,10 @@
 # 预览将被删除的文件夹（不真正删除）：
 # python scripts/clean_old_statepoints.py
 #
-# 删除 7 天前的运行文件夹：
+# 删除 7 天前的运行文件夹：在终端输入以下命令并回车
 # python scripts/clean_old_statepoints.py --days 7 --delete
 #
-# 删除 30 天前的运行文件夹：
+# 删除 30 天前的运行文件夹：在终端输入以下命令并回车
 # python scripts/clean_old_statepoints.py --days 30 --delete
 
 from pathlib import Path

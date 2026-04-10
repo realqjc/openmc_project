@@ -63,6 +63,6 @@ analysis:     #是否保存.h5文件
 
 workflow:
   auto_analyze_after_run: true      #自动分析,只是扫描时可以关闭
-  auto_clean_statepoints: false     #自动清理状态文件
+  auto_clean_statepoints: true    #自动清理状态文件
   clean_days: 7                     #清理多少天前的statepoints文件 
   clean_delete_mode: true          #如果clean_delete_mode=true，则直接删除文件；如果false，则移动到一个叫old_statepoints的文件夹里，保留备份。建议先用false测试，确认没问题后再改成true。
