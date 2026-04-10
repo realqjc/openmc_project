@@ -11,8 +11,8 @@
 # 删除 7 天前的运行文件夹：在终端输入以下命令并回车
 # python scripts/clean_old_statepoints.py --days 7 --delete
 #
-# 删除 30 天前的运行文件夹：在终端输入以下命令并回车
-# python scripts/clean_old_statepoints.py --days 30 --delete
+# 删除 1 天前的运行文件夹：在终端输入以下命令并回车
+# python scripts/clean_old_statepoints.py --days 1 --delete
 
 from pathlib import Path
 from datetime import datetime, timedelta
